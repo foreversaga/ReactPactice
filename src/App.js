@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Person from './Person/Person'
+import Validation from './Homework/ValidationComponent'
+import CharComp from './Homework/CharComponent'
 
 class app extends Component {
     state = {
@@ -10,7 +12,10 @@ class app extends Component {
             {id: '2', name: 'Evonne', age: 34},
             {id: '3', name: 'Baby', age: 0.5}
         ],
-        showPersons: false
+        showPersons: false,
+        inputText: '',
+        validation: '',
+        texts: []
     };
 
     deletePersonHandler = (personIndex) => {
@@ -40,7 +45,51 @@ class app extends Component {
         this.setState({showPersons: !doesShow});
     }
     style = {
-        border: '1px solid blue'
+        border: '1px solid blue',
+        margin: '5px'
+    }
+
+    inputTextHandler = (event) => {
+        let textArray = [];
+        let validation = '';
+        this.setState({
+            inputText: event.target.value
+        }, () => {
+            let input = this.state.inputText;
+            let textArray = input.split('');
+            let texts = []
+            for (let i = 0; i < textArray.length; i++) {
+                texts.push({id: i, text: textArray[i]})
+            }
+            if (input.length > 5) {
+                validation = 'Text too long.'
+            } else if (input.length < 5) {
+                validation = 'Text too short.'
+            } else {
+                validation = ''
+            }
+            this.setState({
+                validation: validation,
+                texts: texts
+            })
+        });
+
+
+    }
+
+    charTextHandler = (id) => {
+        let inputText = '';
+        let textArray = this.state.texts.slice();
+        let texts = [];
+        textArray.splice(id, 1);
+        for (let i = 0; i < textArray.length; i++) {
+            texts.push({id: i, text: textArray[i].text});
+            inputText += textArray[i].text;
+        }
+        this.setState({
+            inputText: inputText,
+            texts: texts
+        })
     }
 
     render() {
@@ -60,6 +109,11 @@ class app extends Component {
             <h1 className="mr-auto">Welcome</h1>
             <button style={this.style} onClick={this.togglePersonHandler}>Switch Name</button>
             {person}
+            <Validation changed={this.inputTextHandler} inputValue={this.state.inputText}
+                        validation={this.state.validation}/>
+            {this.state.texts.map((text, index) => {
+                return <CharComp text={text.text} key={index} delete={() => this.charTextHandler(index)}/>
+            })}
         </div>
     }
 }
