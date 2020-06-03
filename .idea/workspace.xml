@@ -2,10 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="275fa2c2-f570-4417-a677-6cfb510d1a32" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Homework/CharComponent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Homework/ValidationComponent.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Cockpit/Cockpit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Hoc/HocAux.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Hoc/withClass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Homework/AccessComponentState.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Homework/AccessOutPut.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Person/Persons.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Homework/CharComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Homework/CharComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Person/Person.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Person/Person.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/person.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/person.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -80,7 +90,8 @@
       <option name="presentableId" value="Default" />
       <updated>1589938242989</updated>
       <workItem from="1589938245906" duration="29271000" />
-      <workItem from="1590035102236" duration="17802000" />
+      <workItem from="1590035102236" duration="18571000" />
+      <workItem from="1590478930837" duration="22810000" />
     </task>
     <task id="LOCAL-00001" summary="new react">
       <created>1589969477050</created>
@@ -96,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590056271100</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add homework 2">
+      <created>1590141037533</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1590141037533</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -118,6 +136,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="new react" />
     <MESSAGE value="add list" />
-    <option name="LAST_COMMIT_MESSAGE" value="add list" />
+    <MESSAGE value="add homework 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="add homework 2" />
   </component>
 </project>

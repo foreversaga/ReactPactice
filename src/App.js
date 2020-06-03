@@ -1,9 +1,15 @@
 import React, {Component} from 'react';
-import './App.css';
+import classes from './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Person from './Person/Person'
 import Validation from './Homework/ValidationComponent'
 import CharComp from './Homework/CharComponent'
+import Radium from "radium";
+import AccessOutput from './Homework/AccessOutPut'
+import Persons from "./Person/Persons";
+import Cockpit from "./Cockpit/Cockpit"
+import HocAux from "./Hoc/HocAux"
+import withClass from "./Hoc/withClass";
 
 class app extends Component {
     state = {
@@ -15,15 +21,18 @@ class app extends Component {
         showPersons: false,
         inputText: '',
         validation: '',
-        texts: []
+        texts: [],
+        showCockpit: true
     };
 
     deletePersonHandler = (personIndex) => {
         const persons = [...this.state.persons];
         // persons.splice(personIndex, 1);
-        this.setState({
-            persons: persons
-        });
+        if (persons.length !== this.state.persons.length) {
+            this.setState({
+                persons: persons
+            });
+        }
     }
 
     nameChangeHandler = (event, id) => {
@@ -31,12 +40,14 @@ class app extends Component {
             return p.id === id;
         })
         const person = {...this.state.persons[personIndex]};
-        person.name = event.target.value;
-        const persons = [...this.state.persons];
-        persons[personIndex] = person;
-        this.setState({
-            persons: persons
-        })
+        if (person.name !== event.target.value) {
+            person.name = event.target.value;
+            const persons = [...this.state.persons];
+            persons[personIndex] = person;
+            this.setState({
+                persons: persons
+            })
+        }
     }
 
 
@@ -46,7 +57,10 @@ class app extends Component {
     }
     style = {
         border: '1px solid blue',
-        margin: '5px'
+        margin: '5px',
+        ':hover': {
+            border: '1px solid red'
+        }
     }
 
     inputTextHandler = (event) => {
@@ -92,21 +106,32 @@ class app extends Component {
         })
     }
 
+    cockpitBtn = () => {
+        this.setState({
+            showCockpit: !this.state.showCockpit
+        })
+    }
+
     render() {
         let person = null;
+        let cockpit = null;
         if (this.state.showPersons) {
             person = (
                 <div>
-                    {this.state.persons.map((person, index) => {
-                        return <Person click={() => this.deletePersonHandler(index)} name={person.name}
-                                       age={person.age} key={person.id}
-                                       changed={(event) => this.nameChangeHandler(event, person.id)}/>
-                    })}
+                    <Persons persons={this.state.persons}
+                             clicked={this.deletePersonHandler}
+                             changed={this.nameChangeHandler}
+                             cockpit={this.state.showCockpit}/>
                 </div>
-            )
+            );
         }
-        return <div className="App">
-            <h1 className="mr-auto">Welcome</h1>
+
+        if (this.state.showCockpit) {
+            cockpit = (<Cockpit/>)
+        }
+
+        return <HocAux>
+            <h1>Welcome</h1>
             <button style={this.style} onClick={this.togglePersonHandler}>Switch Name</button>
             {person}
             <Validation changed={this.inputTextHandler} inputValue={this.state.inputText}
@@ -114,8 +139,11 @@ class app extends Component {
             {this.state.texts.map((text, index) => {
                 return <CharComp text={text.text} key={index} delete={() => this.charTextHandler(index)}/>
             })}
-        </div>
+            <AccessOutput></AccessOutput>
+            <button onClick={this.cockpitBtn}>show cockpit</button>
+            {cockpit}
+        </HocAux>
     }
 }
 
-export default app;
+export default withClass(app, "App");
