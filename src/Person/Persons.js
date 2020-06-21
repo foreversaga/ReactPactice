@@ -1,6 +1,5 @@
 import React, {Component, PureComponent, useEffect} from "react";
 import Person from "./Person";
-
 class Persons extends PureComponent {
 
     // shouldComponentUpdate(nextProps, nextState, nextContext) {
@@ -12,11 +11,12 @@ class Persons extends PureComponent {
     // }
 
     render() {
-        alert("rendering persons...");
+        console.log("rendering persons...");
         return this.props.persons.map((person, index) => {
             return <Person click={() => this.props.clicked(index)} name={person.name}
-                           age={person.age} key={person.id}
-                           changed={(event) => this.props.changed(event, person.id)}/>
+                           age={person.age} key={person.id} id={person.id}
+                           changed={(event) => this.props.changed(event, person.id)}
+                           isAuth={this.props.isAuthenticated}/>
         });
     }
 }

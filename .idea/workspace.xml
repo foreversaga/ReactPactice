@@ -2,22 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="275fa2c2-f570-4417-a677-6cfb510d1a32" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Cockpit/Cockpit.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Hoc/HocAux.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Hoc/withClass.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Homework/AccessComponentState.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Homework/AccessOutPut.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Person/Persons.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/context/auth-context.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Homework/CharComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Homework/CharComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cockpit/Cockpit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cockpit/Cockpit.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Person/Person.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Person/Person.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/person.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/person.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Person/Persons.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Person/Persons.js" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,6 +25,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1c9QHfOnGzPmRLWPEz6mGgEmSHk" />
+  <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
+  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -52,18 +46,6 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="vcs.Subversion" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager" selected="npm.npm start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
@@ -78,6 +60,18 @@
       <envs />
       <method v="2" />
     </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration>C:\Users\forev\AppData\Roaming\Subversion</configuration>
@@ -138,5 +132,23 @@
     <MESSAGE value="add list" />
     <MESSAGE value="add homework 2" />
     <option name="LAST_COMMIT_MESSAGE" value="add homework 2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="2517" height="190" key="GridCell.Tab.0.bottom" timestamp="1592745564360">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="190" key="GridCell.Tab.0.bottom/-1920.0.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1592745564360" />
+    <state width="2517" height="190" key="GridCell.Tab.0.center" timestamp="1592745564360">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="190" key="GridCell.Tab.0.center/-1920.0.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1592745564360" />
+    <state width="2517" height="190" key="GridCell.Tab.0.left" timestamp="1592745564360">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="190" key="GridCell.Tab.0.left/-1920.0.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1592745564360" />
+    <state width="2517" height="190" key="GridCell.Tab.0.right" timestamp="1592745564360">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="190" key="GridCell.Tab.0.right/-1920.0.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1592745564360" />
   </component>
 </project>

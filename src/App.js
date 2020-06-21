@@ -1,15 +1,14 @@
 import React, {Component} from 'react';
 import classes from './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Person from './Person/Person'
 import Validation from './Homework/ValidationComponent'
 import CharComp from './Homework/CharComponent'
-import Radium from "radium";
 import AccessOutput from './Homework/AccessOutPut'
 import Persons from "./Person/Persons";
 import Cockpit from "./Cockpit/Cockpit"
 import HocAux from "./Hoc/HocAux"
 import withClass from "./Hoc/withClass";
+import AuthContext from "./context/auth-context"
 
 class app extends Component {
     state = {
@@ -22,7 +21,9 @@ class app extends Component {
         inputText: '',
         validation: '',
         texts: [],
-        showCockpit: true
+        showCockpit: true,
+        changedCounter: 0,
+        authenticated: false
     };
 
     deletePersonHandler = (personIndex) => {
@@ -44,8 +45,11 @@ class app extends Component {
             person.name = event.target.value;
             const persons = [...this.state.persons];
             persons[personIndex] = person;
-            this.setState({
-                persons: persons
+            this.setState((prevState, props) => {
+                return {
+                    persons: persons,
+                    changedCounter: prevState.changedCounter + 1
+                }
             })
         }
     }
@@ -112,6 +116,10 @@ class app extends Component {
         })
     }
 
+    loginHandler = () => {
+        this.setState({authenticated: true});
+    }
+
     render() {
         let person = null;
         let cockpit = null;
@@ -127,21 +135,23 @@ class app extends Component {
         }
 
         if (this.state.showCockpit) {
-            cockpit = (<Cockpit/>)
+            cockpit = (<Cockpit onClick={this.togglePersonHandler}/>)
         }
 
-        return <HocAux>
+        return <HocAux className="classes">
             <h1>Welcome</h1>
-            <button style={this.style} onClick={this.togglePersonHandler}>Switch Name</button>
-            {person}
-            <Validation changed={this.inputTextHandler} inputValue={this.state.inputText}
-                        validation={this.state.validation}/>
-            {this.state.texts.map((text, index) => {
-                return <CharComp text={text.text} key={index} delete={() => this.charTextHandler(index)}/>
-            })}
-            <AccessOutput></AccessOutput>
-            <button onClick={this.cockpitBtn}>show cockpit</button>
-            {cockpit}
+            {/*<button style={this.style} onClick={this.togglePersonHandler}>Switch Name</button>*/}
+            <AuthContext.Provider value={{authenticated: this.state.authenticated, login: this.loginHandler}}>
+                {person}
+                <Validation changed={this.inputTextHandler} inputValue={this.state.inputText}
+                            validation={this.state.validation}/>
+                {this.state.texts.map((text, index) => {
+                    return <CharComp text={text.text} key={index} delete={() => this.charTextHandler(index)}/>
+                })}
+                <AccessOutput></AccessOutput>
+                <button onClick={this.cockpitBtn}>show cockpit</button>
+                {cockpit}
+            </AuthContext.Provider>
         </HocAux>
     }
 }
